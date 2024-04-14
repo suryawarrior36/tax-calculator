@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="script.js"></script>
+    <style>
+        .error-icon {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <main>
+    <form id="tax-form">
+        <div class="mb-3">
+            <label for="annum-income" class="form-label">Enter Gross Annual Income:</label>
+            <div class="position-relative">
+                <input type="number" class="form-control" id="annum-income" placeholder="Enter Gross Annual Income" required>
+                <span class="error-icon text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="extra-income" class="form-label">Enter Extra Income:</label>
+            <div class="position-relative">
+                <input type="number" class="form-control" id="extra-income" placeholder="Enter Extra Income" required>
+                <span class="error-icon text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="age-group" class="form-label">Enter Age Group:</label>
+            <div class="position-relative">
+                <select class="form-select" aria-label="Default select example" id="age-group" required>
+                    <option selected disabled>Choose Age Group</option>
+                    <option value="1">&lt; 40</option>
+                    <option value="2">&ge; 40 &lt; 60</option>
+                    <option value="3">&ge; 60</option>
+                </select>
+                <span class="error-icon text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="deductions" class="form-label">Enter Total Applicable Deductions:</label>
+            <div class="position-relative">
+                <input type="number" class="form-control" id="deductions" placeholder="Enter Total Applicable Deductions" required>
+                <span class="error-icon text-danger"></span>
+            </div>
+        </div>
+        <div class="center-btn">
+            <button class="btn btn-primary" id="submit-btn">Submit</button>
+        </div>
+    </form>
+</main>
+    <div class="modal" tabindex="-1" id="taxModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title">Tax Amount</h5> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3>Your tax amount will be</h3>
+              <p id="taxAmount"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" tabindex="-1" id="totalModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title">Total Income</h5> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3>Your overall income will be</h3>
+              <p id="totalAmount"></p>
+              <p>after tax deductions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

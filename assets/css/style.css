@@ -1,0 +1,46 @@
+body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+
+main{
+    width: 600px;
+    height: 500px;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.center-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#submit-btn{
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.modal-dialog {
+    margin: auto;
+    top: 40%;
+    transform: translateY(-50%);
+    max-width: 50%;
+}
+
+.modal-content {
+    width: 100%;
+}
